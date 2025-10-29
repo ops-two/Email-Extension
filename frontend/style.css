@@ -1,0 +1,65 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #fff;
+        background-color: #111215;
+    }
+}
+
+/* Contact Card Hover Effects - GPU Accelerated */
+.contact-card-hover {
+    will-change: transform, box-shadow;
+    transform: translateZ(0);
+}
+
+.contact-card-hover:hover {
+    transform: translateY(-2px) translateZ(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.contact-card-hover:active {
+    transform: translateY(0) translateZ(0);
+}
+
+/* Email List Item Hover Effects - Optimized */
+.email-list-item {
+    will-change: background-color;
+    transform: translateZ(0);
+}
+
+.email-list-item:hover {
+    background-color: #f8fafc !important;
+    transition: background-color 0.15s ease;
+}
+
+.email-list-item:active {
+    background-color: #e9ecef !important;
+}
+
+/* Loading Spinner Animation */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spinner {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
