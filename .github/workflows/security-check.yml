@@ -1,0 +1,24 @@
+name: Security Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-postinstall:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Block malicious postinstall scripts
+        run: |
+          if grep -r "\"postinstall\"" --include="package.json" .; then
+            echo ""
+            echo "SECURITY BLOCK: postinstall script detected in package.json"
+            echo "Review and explicitly approve before merging."
+            exit 1
+          fi
+          echo "No postinstall scripts found."
+
